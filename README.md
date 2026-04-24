@@ -1,8 +1,8 @@
 # Scott Okamoto - Full-Stack Developer
 
-Full-stack developer focused on building real-time web applications with TypeScript and Node.js.
+Full-stack developer building real-time web applications with TypeScript and Node.js.
 
-I got into development through a web dev bootcamp and have been building backend-focused applications since. Currently working on full-stack apps with emphasis on real-time features and multiplayer interactions.
+I transitioned into software development through a web development bootcamp and have been focused on building backend-driven applications since. I primarily work with TypeScript and Node.js, building full-stack applications with an emphasis on real-time systems and interactive user experiences.
 
 📧 **swokamoto@gmail.com** | 💼 **[LinkedIn](https://linkedin.com/in/scott-okamoto)** | 🌐 **[Portfolio](https://scott-okamoto.dev)**
 
@@ -10,20 +10,25 @@ I got into development through a web dev bootcamp and have been building backend
 
 ## Featured Projects
 
-### Real-Time Chat Application
-Full-stack chat app with live messaging, user authentication, and room management. Built for scalability with WebSocket connections and optimistic UI updates.
-- **Tech**: TypeScript, Node.js, Socket.io, React
-- **[Live Demo](https://chat-app-demo.vercel.app)** • **[GitHub](https://github.com/swokamoto/realtime-chat)**
+### Strongbond RPG
+Discord bot enabling large groups to collaboratively build persistent fantasy worlds. Players create characters, locations, and stories that evolve together over time with shared state management.
+- **Tech**: JavaScript, Discord.js, PostgreSQL, Node.js
+- **[GitHub](https://github.com/swokamoto/worldforge-bot)**
 
-### Expense Tracker API + Dashboard  
-Complete expense management system with REST API, JWT authentication, data visualization, and CSV export. Handles complex financial calculations and reporting.
-- **Tech**: Node.js, PostgreSQL, React, Chart.js
-- **[Live Demo](https://expense-tracker-demo.vercel.app)** • **[GitHub](https://github.com/swokamoto/expense-tracker)**
+### Isabelle's Bead Shop  
+Full-stack e-commerce platform with admin dashboard for inventory management. Secure checkout process with Stripe integration and responsive product catalog.
+- **Tech**: React, Node.js, Stripe, MongoDB
+- **[GitHub](https://github.com/hannah-finch/isabelles-bead-shop)**
 
-### Weather Data Aggregator
-Fetches weather data from multiple APIs, handles caching and rate limiting, displays results on interactive maps.
-- **Tech**: TypeScript, Express, Redis, Leaflet
-- **[Live Demo](https://weather-app-demo.vercel.app)** • **[GitHub](https://github.com/swokamoto/weather-aggregator)**
+### Zen Garden
+Idle cultivation game where members plant seeds and watch their gardens grow in real-time over hours and days. Features persistent growth mechanics and community sharing.
+- **Tech**: Handlebars, Node.js, SVG Art, PostgreSQL
+- **[GitHub](https://github.com/swokamoto/zenGarden2)**
+
+### PokeLounge
+Relaxing social space to select your favorite Pokemon companions and enjoy ambient music. Features custom Pokemon selection and curated lofi playlists.
+- **Tech**: JQuery, JavaScript, HTML, CSS
+- **[GitHub](https://github.com/swokamoto/group-11-project-pokemon)**
 
 ---
 
@@ -46,14 +51,6 @@ Build loading states, error boundaries, and reconnection logic for stable edge c
 ## Technical Details
 
 Built with **Astro + Tailwind CSS + TypeScript** for performance and maintainable code. Mobile-first responsive design using CSS Grid and modern layout techniques.
-
-## Development
-
-```bash
-npm install
-npm run dev    # Start development server
-npm run build  # Build for production
-```
 
 ---
 
