@@ -1,0 +1,137 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+---
+
+<Layout title="Scott Okamoto - Portfolio">
+  <section id="home" class="max-w-4xl mx-auto px-6 py-16">
+    <div class="text-center pt-8">
+      <h1 class="text-4xl sm:text-5xl font-semibold text-text-primary mb-3 tracking-tight">
+        Scott Okamoto
+      </h1>
+
+      <p class="text-accent-blue text-sm font-medium tracking-wide uppercase">
+        Full-Stack Developer
+      </p>
+
+      <p class="text-text-secondary mt-6 max-w-2xl mx-auto text-lg leading-relaxed">
+        I build real-time and full-stack web applications designed for performance, reliability, and seamless user interaction.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 mt-8 justify-center">
+        <a href="#projects"
+          class="bg-accent-blue hover:bg-blue-400 text-black font-medium px-6 py-3 rounded-lg transition-all duration-200 hover:shadow-[0_0_12px_theme(colors.accent.blue/25%)] text-center sm:min-w-[140px]">
+          View Projects
+        </a>
+        <a href="#contact"
+          class="text-accent-blue hover:text-blue-400 border border-border-subtle hover:border-accent-blue px-6 py-3 rounded-lg transition-all duration-200 text-center sm:min-w-[140px]">
+          Contact
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="about" class="bg-bg-surface max-w-4xl mx-auto px-6 py-16">
+    <h2 class="text-2xl font-semibold text-text-primary mb-8 text-center">
+      About
+    </h2>
+    <div class="bg-bg-card border border-border-subtle rounded-2xl p-8 max-w-2xl mx-auto">
+      <div class="space-y-4 text-text-secondary leading-relaxed text-center">
+        <p>
+          I transitioned into software development through a web development bootcamp and have been focused on building backend-driven applications since.
+        </p>
+
+        <p>
+          I primarily work with <span class="text-accent-blue font-medium">TypeScript and Node.js</span>, building full-stack applications with an emphasis on real-time systems and interactive user experiences.
+        </p>
+
+        <p>
+          I also have experience with Python and Go, and I’m drawn to problems involving shared state, synchronization, and real-time interaction.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="max-w-4xl mx-auto px-6 py-16">
+    <h2 class="text-2xl font-semibold text-text-primary mb-8 text-center">
+      Projects
+    </h2>
+    <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-2">
+      <ProjectCard 
+        title="WorldForge RPG Bot"
+        description="Discord bot enabling large groups to collaboratively build persistent fantasy worlds. Players create characters, locations, and stories that evolve together over time with shared state management."
+        tech={["TypeScript", "Discord.js", "PostgreSQL", "Node.js"]}
+        github="https://github.com/swokamoto/worldforge-bot"
+      />
+      <ProjectCard 
+        title="Lumina Jewelry Store"
+        description="Full-stack e-commerce platform with admin dashboard for inventory management. Secure checkout process with Stripe integration and responsive product catalog."
+        tech={["React", "Node.js", "Stripe", "PostgreSQL"]}
+        github="https://github.com/hannah-finch/isabelles-bead-shop"
+      />
+      <ProjectCard 
+        title="Zen Garden"
+        description="Idle cultivation game where members plant seeds and watch their gardens grow in real-time over hours and days. Features persistent growth mechanics and community sharing."
+        tech={["React", "Node.js", "WebSockets", "MongoDB"]}
+        github="https://github.com/swokamoto/zenGarden2
+"
+      />
+      <ProjectCard 
+        title="PokeLounge"
+        description="Relaxing social space to select your favorite Pokemon companions and enjoy ambient music. Features custom Pokemon selection and curated lofi playlists."
+        tech={["React", "JavaScript", "Web Audio API", "Firebase"]}
+        github="https://github.com/swokamoto/group-11-project-pokemon"
+      />
+    </div>
+  </section>
+
+  <section id="process" class="bg-bg-surface max-w-4xl mx-auto px-6 py-16">
+    <h2 class="text-2xl font-semibold text-text-primary mb-8 text-center">
+      How I Build
+    </h2>
+    <div class="grid gap-6 md:grid-cols-2">
+      <div class="bg-bg-card border border-border-subtle p-6 rounded-lg hover:border-accent-blue transition-all duration-200">
+        <h3 class="text-lg font-medium text-text-primary mb-2">Structure First</h3>
+        <p class="text-text-secondary text-sm leading-relaxed">Plan user flows, then build backend APIs and frontend components to support them cleanly.</p>
+      </div>
+      <div class="bg-bg-card border border-border-subtle p-6 rounded-lg hover:border-accent-blue transition-all duration-200">
+        <h3 class="text-lg font-medium text-text-primary mb-2">Real-Time Features</h3>
+        <p class="text-text-secondary text-sm leading-relaxed">Focus on WebSocket connections, state synchronization, and handling multiple users interacting with shared data.</p>
+      </div>
+      <div class="bg-bg-card border border-border-subtle p-6 rounded-lg hover:border-accent-blue transition-all duration-200">
+        <h3 class="text-lg font-medium text-text-primary mb-2">Error Handling</h3>
+        <p class="text-text-secondary text-sm leading-relaxed">Build loading states, error boundaries, and reconnection logic so apps feel stable in edge cases.</p>
+      </div>
+      <div class="bg-bg-card border border-border-subtle p-6 rounded-lg hover:border-accent-blue transition-all duration-200">
+        <h3 class="text-lg font-medium text-text-primary mb-2">Testing</h3>
+        <p class="text-text-secondary text-sm leading-relaxed">Write unit tests for business logic and integration tests for API endpoints before deployment.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="max-w-4xl mx-auto px-6 py-16">
+    <h2 class="text-2xl font-semibold text-text-primary mb-8 text-center">
+      Contact
+    </h2>
+    <div class="bg-bg-card border border-border-subtle rounded-2xl p-8 max-w-2xl mx-auto">
+      <p class="text-text-secondary text-center mb-6">
+        Open to full-time and contract opportunities in full-stack development.
+      </p>
+      <div class="space-y-4">
+        <div class="flex items-center justify-center gap-6">
+          <span class="text-text-muted text-sm">Email</span>
+          <a href="mailto:swokamoto@gmail.com" class="text-accent-blue hover:text-blue-400 transition-all duration-200">swokamoto@gmail.com</a>
+        </div>
+        <div class="flex items-center justify-center gap-6">
+          <span class="text-text-muted text-sm">LinkedIn</span>
+          <a href="https://linkedin.com/in/sokamoto" target="_blank" rel="noopener" class="text-accent-blue hover:text-blue-400 transition-all duration-200">linkedin.com/in/scott-okamoto</a>
+        </div>
+        <div class="flex items-center justify-center gap-6">
+          <span class="text-text-muted text-sm">GitHub</span>
+          <a href="https://github.com/swokamoto" target="_blank" rel="noopener" class="text-accent-blue hover:text-blue-400 transition-all duration-200">github.com/swokamoto</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

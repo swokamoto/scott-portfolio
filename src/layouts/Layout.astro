@@ -1,0 +1,78 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Scott Okamoto - Full Stack Developer" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="min-h-screen flex flex-col bg-bg-app text-text-primary">
+      <header class="fixed top-0 left-0 right-0 z-50 bg-bg-app border-b border-border-subtle">
+        <nav class="flex justify-center items-center gap-2 md:gap-12 px-4 h-20 w-full">
+          <a href="#home" class="text-accent-blue hover:text-blue-400 hover:bg-accent-blue/10 font-medium h-11 px-6 rounded-lg transition-colors duration-200 flex items-center">Home</a>
+          <a href="#about" class="text-accent-blue hover:text-blue-400 hover:bg-accent-blue/10 font-medium h-11 px-6 rounded-lg transition-colors duration-200 flex items-center">About</a>
+          <a href="#projects" class="text-accent-blue hover:text-blue-400 hover:bg-accent-blue/10 font-medium h-11 px-6 rounded-lg transition-colors duration-200 flex items-center">Projects</a>
+          <a href="#process" class="text-accent-blue hover:text-blue-400 hover:bg-accent-blue/10 font-medium h-11 px-6 rounded-lg transition-colors duration-200 flex items-center">Process</a>
+          <a href="#contact" class="text-accent-blue hover:text-blue-400 hover:bg-accent-blue/10 font-medium h-11 px-6 rounded-lg transition-colors duration-200 flex items-center">Contact</a>
+        </nav>
+      </header>
+      
+      <main class="flex-1 pt-20">
+        <slot />
+      </main>
+      
+      <footer class="bg-bg-surface border-t border-border-subtle py-12">
+        <div class="w-full text-center px-6">
+          
+          <p class="text-text-secondary text-base">
+            Designed and built by Scott Okamoto
+          </p>
+
+          <p class="text-text-muted text-sm mt-2">
+            <span class="hover:text-accent-blue transition">Astro</span> • 
+            <span class="hover:text-accent-blue transition">Tailwind</span>
+          </p>
+
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
+
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    scroll-behavior: smooth;
+    scroll-padding-top: 3rem;
+  }
+
+  /* section {
+    scroll-margin-top: 6rem;
+  } */
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+</style>
+

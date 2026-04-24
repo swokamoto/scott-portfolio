@@ -1,0 +1,51 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  tech: string[];
+  github?: string;
+  live?: string;
+}
+
+const { title, description, tech, github, live } = Astro.props;
+---
+
+<div class="bg-bg-card border border-border-subtle rounded-2xl p-6 hover:border-accent-blue transition-all duration-200 h-full flex flex-col gap-4">
+  
+  <h3 class="text-xl font-semibold text-text-primary">
+    {title}
+  </h3>
+
+  <p class="text-text-secondary leading-relaxed flex-grow">
+    {description}
+  </p>
+
+  <div class="text-sm text-text-muted">
+    {tech.join(" • ")}
+  </div>
+
+  <div class="flex flex-col sm:flex-row gap-3 mt-2">
+    {live ? (
+      <a href={live} target="_blank" rel="noopener noreferrer" 
+         class="flex items-center justify-center gap-2 w-full sm:w-auto text-center px-4 py-2 bg-accent-blue hover:bg-blue-400 text-black rounded-lg transition-all duration-200 hover:shadow-[0_0_12px_theme(colors.accent.blue/25%)]">
+        🔗 Live Demo
+      </a>
+    ) : (
+      <div class="flex items-center justify-center gap-2 w-full sm:w-auto text-center px-4 py-2 bg-accent-blue/20 text-accent-blue/50 rounded-lg opacity-50 cursor-not-allowed">
+        🔗 Live Demo
+      </div>
+    )}
+    
+    {github ? (
+      <a href={github} target="_blank" rel="noopener noreferrer"
+         class="flex items-center justify-center gap-2 w-full sm:w-auto text-center px-4 py-2 text-accent-blue hover:text-blue-400 border border-border-subtle hover:border-accent-blue rounded-lg transition-all duration-200">
+        💻 GitHub
+      </a>
+    ) : (
+      <div class="flex items-center justify-center gap-2 w-full sm:w-auto text-center px-4 py-2 text-text-muted border border-border-subtle rounded-lg opacity-50 cursor-not-allowed">
+        💻 GitHub
+      </div>
+    )}
+  </div>
+
+</div>
