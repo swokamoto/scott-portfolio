@@ -10,25 +10,28 @@ I transitioned into software development through a web development bootcamp and 
 
 ## Featured Projects
 
-### Strongbond RPG
-Discord bot enabling large groups to collaboratively build persistent fantasy worlds. Players create characters, locations, and stories that evolve together over time with shared state management.
-- **Tech**: JavaScript, Discord.js, PostgreSQL, Node.js
-- **[GitHub](https://github.com/swokamoto/worldforge-bot)**
+### Relay RPG
+A play-by-post storytelling Discord bot where small groups collaboratively write stories driven by dice mechanics. Players create persistent characters, join story hooks posted to a shared board, and take turns building narrative — each roll shaping what the next player inherits.
+- **Tech**: Node.js, SQLite, Discord SDK, Fly.io
+- **[GitHub](https://github.com/swokamoto/relay-rpg)**
 
 ### Isabelle's Bead Shop  
-Full-stack e-commerce platform with admin dashboard for inventory management. Secure checkout process with Stripe integration and responsive product catalog.
+Full-stack e-commerce platform with admin dashboard for inventory management and customer reviews. Secure checkout process with Stripe integration and responsive product catalog.
 - **Tech**: React, Node.js, Stripe, MongoDB
 - **[GitHub](https://github.com/hannah-finch/isabelles-bead-shop)**
+- **[Live](https://isabellesbeadshop.onrender.com/)**
 
 ### Zen Garden
-Idle cultivation game where members plant seeds and watch their gardens grow in real-time over hours and days. Features persistent growth mechanics and community sharing.
-- **Tech**: Handlebars, Node.js, SVG Art, PostgreSQL
+Full-stack garden planner where users design and customize their own plot by placing trees, bushes, and flowers rendered in real-time with animated SVG graphics. Features user authentication, persistent plot data, and a REST API backend.
+- **Tech**: Handlebars, SVG, PostgreSQL, Sequelize
 - **[GitHub](https://github.com/swokamoto/zenGarden2)**
+- **[Live](https://zengarden-5q63.onrender.com/)**
 
 ### PokeLounge
-Relaxing social space to select your favorite Pokemon companions and enjoy ambient music. Features custom Pokemon selection and curated lofi playlists.
+Interactive ambient web app where users add up to 4 Pokémon to a cozy scene via the PokéAPI, drag-and-drop them between seats, and relax to a built-in lofi music player. Pokémon selections persist across sessions via localStorage, scenes are swappable, and each Pokémon generates a Chuck Norris joke with their name swapped in via a second API.
 - **Tech**: JQuery, JavaScript, HTML, CSS
 - **[GitHub](https://github.com/swokamoto/group-11-project-pokemon)**
+- **[Live](https://group11projectpokemon.github.io/group-11-project-pokemon/)**
 
 ---
 

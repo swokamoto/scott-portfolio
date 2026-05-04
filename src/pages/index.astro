@@ -59,29 +59,31 @@ import ProjectCard from '../components/ProjectCard.astro';
     </h2>
     <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-2">
       <ProjectCard 
-        title="Strongbond RPG"
-        description="Discord bot enabling large groups to collaboratively build persistent fantasy worlds. Players create characters, locations, and stories that evolve together over time with shared state management."
-        tech={["JavaScript", "Discord.js", "PostgreSQL", "Node.js"]}
-        github="https://github.com/swokamoto/worldforge-bot"
+        title="Relay RPG"
+        description="A play-by-post storytelling Discord bot where small groups collaboratively write stories driven by dice mechanics. Players create persistent characters, join story hooks posted to a shared board, and take turns building narrative — each roll shaping what the next player inherits."
+        tech={["Node.js", "SQLite", "Discord SDK", "Fly.io"]}
+        github="https://github.com/swokamoto/relay-rpg"
       />
       <ProjectCard 
-        title="Lumina Jewelry Store"
-        description="Full-stack e-commerce platform with admin dashboard for inventory management. Secure checkout process with Stripe integration and responsive product catalog."
+        title="Isabelle's Bead Shop"
+        description="Full-stack e-commerce platform with admin dashboard for inventory management and customer reviews. Secure checkout process with Stripe integration and responsive product catalog."
         tech={["React", "Node.js", "Stripe", "MongoDB"]}
         github="https://github.com/hannah-finch/isabelles-bead-shop"
+        live="https://isabellesbeadshop.onrender.com/"
       />
       <ProjectCard 
         title="Zen Garden"
-        description="Idle cultivation game where members plant seeds and watch their gardens grow in real-time over hours and days. Features persistent growth mechanics and community sharing."
-        tech={["Handlebars", "Node.js", "SVG Art", "PostgreSQL"]}
-        github="https://github.com/swokamoto/zenGarden2
-"
+        description="Full-stack garden planner where users design and customize their own plot by placing trees, bushes, and flowers rendered in real-time with animated SVG graphics. Features user authentication, persistent plot data, and a REST API backend."
+        tech={["Handlebars", "SVG", "PostgreSQL", "Sequelize"]}
+        github="https://github.com/swokamoto/zenGarden2"
+        live="https://zengarden-5q63.onrender.com/"
       />
       <ProjectCard 
         title="PokeLounge"
-        description="Relaxing social space to select your favorite Pokemon companions and enjoy ambient music. Features custom Pokemon selection and curated lofi playlists."
+        description="Interactive ambient web app where users add up to 4 Pokémon to a cozy scene via the PokéAPI, drag-and-drop them between seats, and relax to a built-in lofi music player. Pokémon selections persist across sessions via localStorage, scenes are swappable, and each Pokémon generates a Chuck Norris joke with their name swapped in via a second API."
         tech={["JQuery", "JavaScript", "HTML", "CSS"]}
         github="https://github.com/swokamoto/group-11-project-pokemon"
+        live="https://group11projectpokemon.github.io/group-11-project-pokemon/"
       />
     </div>
   </section>
@@ -93,19 +95,19 @@ import ProjectCard from '../components/ProjectCard.astro';
     <div class="grid gap-6 md:grid-cols-2">
       <div class="bg-bg-card border border-border-subtle p-6 rounded-lg hover:border-accent-blue transition-all duration-200">
         <h3 class="text-lg font-medium text-text-primary mb-2">Structure First</h3>
-        <p class="text-text-secondary text-sm leading-relaxed">Plan user flows, then build backend APIs and frontend components to support them cleanly.</p>
+        <p class="text-text-secondary text-sm leading-relaxed">Plan user flows before writing code. In Relay RPG, I mapped the full turn sequence and shared board logic before touching the Discord SDK, which kept the data model clean and the command handlers predictable.</p>
       </div>
       <div class="bg-bg-card border border-border-subtle p-6 rounded-lg hover:border-accent-blue transition-all duration-200">
-        <h3 class="text-lg font-medium text-text-primary mb-2">Real-Time Features</h3>
-        <p class="text-text-secondary text-sm leading-relaxed">Focus on WebSocket connections, state synchronization, and handling multiple users interacting with shared data.</p>
+        <h3 class="text-lg font-medium text-text-primary mb-2">Real-Time First</h3>
+        <p class="text-text-secondary text-sm leading-relaxed">Built Zen Garden's SVG rendering to update instantly on user interaction without page reloads, using a REST API backend to persist state between sessions. Relay RPG similarly tracks turn state across multiple concurrent players.</p>
+      </div>
+      <div class="bg-bg-card border border-border-subtle p-6 rounded-lg hover:border-accent-blue transition-all duration-200">
+        <h3 class="text-lg font-medium text-text-primary mb-2">API Design</h3>
+        <p class="text-text-secondary text-sm leading-relaxed">Design backend routes around the data the frontend actually needs. Isabelle's Bead Shop uses a clear separation between the customer-facing catalog API and the admin inventory endpoints, with Stripe webhooks handled server-side.</p>
       </div>
       <div class="bg-bg-card border border-border-subtle p-6 rounded-lg hover:border-accent-blue transition-all duration-200">
         <h3 class="text-lg font-medium text-text-primary mb-2">Error Handling</h3>
-        <p class="text-text-secondary text-sm leading-relaxed">Build loading states, error boundaries, and reconnection logic so apps feel stable in edge cases.</p>
-      </div>
-      <div class="bg-bg-card border border-border-subtle p-6 rounded-lg hover:border-accent-blue transition-all duration-200">
-        <h3 class="text-lg font-medium text-text-primary mb-2">Testing</h3>
-        <p class="text-text-secondary text-sm leading-relaxed">Write unit tests for business logic and integration tests for API endpoints before deployment.</p>
+        <p class="text-text-secondary text-sm leading-relaxed">Build for failure cases early. PokeLounge falls back gracefully when the PokéAPI or Chuck Norris API is slow or unavailable, and localStorage keeps Pokémon selections intact across sessions without requiring a backend.</p>
       </div>
     </div>
   </section>
