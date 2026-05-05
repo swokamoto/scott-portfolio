@@ -4,7 +4,7 @@ Full-stack developer building real-time web applications with TypeScript and Nod
 
 I transitioned into software development through a web development bootcamp and have been focused on building backend-driven applications since. I primarily work with TypeScript and Node.js, building full-stack applications with an emphasis on real-time systems and interactive user experiences.
 
-📧 **swokamoto@gmail.com** | 💼 **[LinkedIn](https://linkedin.com/in/scott-okamoto)** | 🌐 **[Portfolio](https://scott-okamoto.dev)**
+📧 **swokamoto@gmail.com** | 💼 **[LinkedIn](https://linkedin.com/in/scott-okamoto)** | 🌐 **[Portfolio](https://scott-portfolio-azure.vercel.app)**
 
 ---
 
