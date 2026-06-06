@@ -11,11 +11,12 @@ import ProjectCard from '../components/ProjectCard.astro';
       </h1>
 
       <p class="text-accent-blue text-sm font-medium tracking-wide uppercase">
-        Full-Stack Developer
+        Full-stack developer focused on server-first web applications and backend-heavy systems.
       </p>
 
       <p class="text-text-secondary mt-6 max-w-2xl mx-auto text-lg leading-relaxed">
-        I build real-time and full-stack web applications designed for performance, reliability, and seamless user interaction.
+        I build applications where the server is the source of truth — using Node.js, Express, and databases
+    to power real systems like multiplayer games, e-commerce platforms, and interactive tools.
       </p>
 
       <div class="flex flex-col sm:flex-row gap-4 mt-8 justify-center">
@@ -39,15 +40,19 @@ import ProjectCard from '../components/ProjectCard.astro';
     <div class="bg-bg-card border border-border-subtle rounded-2xl p-8 max-w-2xl mx-auto">
       <div class="space-y-4 text-text-secondary leading-relaxed text-center">
         <p>
-          I transitioned into software development through a web development bootcamp and have been focused on building backend-driven applications since.
+          I’m a full-stack developer focused on building backend-driven applications with persistent state, structured data, and clear system design.
         </p>
 
         <p>
-          I primarily work with <span class="text-accent-blue font-medium">TypeScript and Node.js</span>, building full-stack applications with an emphasis on real-time systems and interactive user experiences.
+          Most of my work centers around Node.js-based systems where the server manages state, logic, and application behavior — from multiplayer Discord RPGs to e-commerce platforms and database-backed tools.
         </p>
 
         <p>
-          I also have experience with Python and Go, and I’m drawn to problems involving shared state, synchronization, and real-time interaction.
+          I’m particularly interested in systems that involve coordination, state changes over time, and predictable data flow across users and sessions.
+        </p>
+
+        <p>
+          I enjoy building systems where multiple users or processes interact with shared state over time — especially when that state needs to stay consistent and predictable.
         </p>
       </div>
     </div>
@@ -60,7 +65,8 @@ import ProjectCard from '../components/ProjectCard.astro';
     <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-2">
       <ProjectCard 
         title="Relay RPG"
-        description="A play-by-post storytelling Discord bot where small groups collaboratively write stories driven by dice mechanics. Players create persistent characters, join story hooks posted to a shared board, and take turns building narrative — each roll shaping what the next player inherits."
+        description="Multiplayer Discord RPG where players create persistent characters and
+        collaborate through turn-based, dice-driven storytelling."
         tech={["Node.js", "SQLite", "Discord SDK", "Fly.io"]}
         github="https://github.com/swokamoto/relay-rpg"
       />
@@ -78,13 +84,13 @@ import ProjectCard from '../components/ProjectCard.astro';
         github="https://github.com/swokamoto/zenGarden2"
         live="https://zengarden-5q63.onrender.com/"
       />
-      <ProjectCard 
+      <!-- <ProjectCard 
         title="PokeLounge"
         description="Interactive ambient web app where users add up to 4 Pokémon to a cozy scene via the PokéAPI, drag-and-drop them between seats, and relax to a built-in lofi music player. Pokémon selections persist across sessions via localStorage, scenes are swappable, and each Pokémon generates a Chuck Norris joke with their name swapped in via a second API."
         tech={["JQuery", "JavaScript", "HTML", "CSS"]}
         github="https://github.com/swokamoto/group-11-project-pokemon"
         live="https://group11projectpokemon.github.io/group-11-project-pokemon/"
-      />
+      /> -->
     </div>
   </section>
 
@@ -95,19 +101,27 @@ import ProjectCard from '../components/ProjectCard.astro';
     <div class="grid gap-6 md:grid-cols-2">
       <div class="bg-bg-card border border-border-subtle p-6 rounded-lg hover:border-accent-blue transition-all duration-200">
         <h3 class="text-lg font-medium text-text-primary mb-2">Structure First</h3>
-        <p class="text-text-secondary text-sm leading-relaxed">Plan user flows before writing code. In Relay RPG, I mapped the full turn sequence and shared board logic before touching the Discord SDK, which kept the data model clean and the command handlers predictable.</p>
+        <p class="text-text-secondary text-sm leading-relaxed">I design the system and data model before writing implementation code.
+        In Relay RPG, this meant defining character state, turn flow, and progression rules
+        before building any Discord command handlers, which kept the backend logic predictable and consistent.</p>
       </div>
       <div class="bg-bg-card border border-border-subtle p-6 rounded-lg hover:border-accent-blue transition-all duration-200">
-        <h3 class="text-lg font-medium text-text-primary mb-2">Real-Time First</h3>
-        <p class="text-text-secondary text-sm leading-relaxed">Built Zen Garden's SVG rendering to update instantly on user interaction without page reloads, using a REST API backend to persist state between sessions. Relay RPG similarly tracks turn state across multiple concurrent players.</p>
+        <h3 class="text-lg font-medium text-text-primary mb-2">State-Driven Systems</h3>
+        <p class="text-text-secondary text-sm leading-relaxed">I focus on how application state is created, updated, and persisted over time.
+        Zen Garden and Relay RPG both rely on server-backed state models where user actions
+        mutate structured data rather than isolated UI behavior.</p>
       </div>
       <div class="bg-bg-card border border-border-subtle p-6 rounded-lg hover:border-accent-blue transition-all duration-200">
         <h3 class="text-lg font-medium text-text-primary mb-2">API Design</h3>
-        <p class="text-text-secondary text-sm leading-relaxed">Design backend routes around the data the frontend actually needs. Isabelle's Bead Shop uses a clear separation between the customer-facing catalog API and the admin inventory endpoints, with Stripe webhooks handled server-side.</p>
+        <p class="text-text-secondary text-sm leading-relaxed">I design APIs around domain behavior rather than UI structure.
+        Isabelle's Bead Shop separates customer-facing product flows from admin inventory management,
+        with Stripe payments and order state handled entirely on the server.</p>
       </div>
       <div class="bg-bg-card border border-border-subtle p-6 rounded-lg hover:border-accent-blue transition-all duration-200">
-        <h3 class="text-lg font-medium text-text-primary mb-2">Error Handling</h3>
-        <p class="text-text-secondary text-sm leading-relaxed">Build for failure cases early. PokeLounge falls back gracefully when the PokéAPI or Chuck Norris API is slow or unavailable, and localStorage keeps Pokémon selections intact across sessions without requiring a backend.</p>
+        <h3 class="text-lg font-medium text-text-primary mb-2">Failure Handling</h3>
+        <p class="text-text-secondary text-sm leading-relaxed">I design systems to degrade gracefully when dependencies fail.
+        External API calls and user state changes are validated server-side,
+        ensuring the application remains stable even under partial failure conditions.</p>
       </div>
     </div>
   </section>
@@ -127,7 +141,7 @@ import ProjectCard from '../components/ProjectCard.astro';
         </div>
         <div class="flex items-center justify-center gap-6">
           <span class="text-text-muted text-sm">LinkedIn</span>
-          <a href="https://linkedin.com/in/sokamoto" target="_blank" rel="noopener" class="text-accent-blue hover:text-blue-400 transition-all duration-200">linkedin.com/in/scott-okamoto</a>
+          <a href="https://linkedin.com/in/sokamoto" target="_blank" rel="noopener" class="text-accent-blue hover:text-blue-400 transition-all duration-200">linkedin.com/in/sokamoto</a>
         </div>
         <div class="flex items-center justify-center gap-6">
           <span class="text-text-muted text-sm">GitHub</span>
