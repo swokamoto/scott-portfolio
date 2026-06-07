@@ -11,12 +11,11 @@ import ProjectCard from '../components/ProjectCard.astro';
       </h1>
 
       <p class="text-accent-blue text-sm font-medium tracking-wide uppercase">
-        Full-stack developer focused on server-first web applications and backend-heavy systems.
+        Full-stack developer focused on server-first systems and backend-heavy applications
       </p>
 
       <p class="text-text-secondary mt-6 max-w-2xl mx-auto text-lg leading-relaxed">
-        I build applications where the server is the source of truth — using Node.js, Express, and databases
-    to power real systems like multiplayer games, e-commerce platforms, and interactive tools.
+        I build backend-driven web applications focused on persistent state and system design.
       </p>
 
       <div class="flex flex-col sm:flex-row gap-4 mt-8 justify-center">
@@ -33,56 +32,35 @@ import ProjectCard from '../components/ProjectCard.astro';
     </div>
   </section>
 
-  <section id="about" class="bg-bg-surface max-w-4xl mx-auto px-6 py-16">
-    <h2 class="text-2xl font-semibold text-text-primary mb-8 text-center">
-      About
-    </h2>
-    <div class="bg-bg-card border border-border-subtle rounded-2xl p-8 max-w-2xl mx-auto">
-      <div class="space-y-4 text-text-secondary leading-relaxed text-center">
-        <p>
-          I’m a full-stack developer focused on building backend-driven applications with persistent state, structured data, and clear system design.
-        </p>
-
-        <p>
-          Most of my work centers around Node.js-based systems where the server manages state, logic, and application behavior — from multiplayer Discord RPGs to e-commerce platforms and database-backed tools.
-        </p>
-
-        <p>
-          I’m particularly interested in systems that involve coordination, state changes over time, and predictable data flow across users and sessions.
-        </p>
-
-        <p>
-          I enjoy building systems where multiple users or processes interact with shared state over time — especially when that state needs to stay consistent and predictable.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section id="projects" class="max-w-4xl mx-auto px-6 py-16">
+  <section id="projects" class="bg-bg-surface max-w-4xl mx-auto px-6 py-16">
     <h2 class="text-2xl font-semibold text-text-primary mb-8 text-center">
       Projects
     </h2>
     <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-2">
       <ProjectCard 
         title="Relay RPG"
-        description="Multiplayer Discord RPG where players create persistent characters and
-        collaborate through turn-based, dice-driven storytelling."
+        description="Event-driven Discord RPG where game state, character data, and turn progression are 
+        managed through server-side logic. Players interact through commands that update persistent SQLite-backed state."
         tech={["Node.js", "SQLite", "Discord SDK", "Fly.io"]}
         github="https://github.com/swokamoto/relay-rpg"
+        designDoc="https://github.com/swokamoto/system-design-notes/blob/main/relay-rpg.md"
       />
       <ProjectCard 
         title="Isabelle's Bead Shop"
-        description="Full-stack e-commerce platform with admin dashboard for inventory management and customer reviews. Secure checkout process with Stripe integration and responsive product catalog."
+        description="Full-stack e-commerce system with an admin dashboard for inventory and order management, 
+        including Stripe-based checkout and customer review workflows."
         tech={["React", "Node.js", "Stripe", "MongoDB"]}
         github="https://github.com/hannah-finch/isabelles-bead-shop"
         live="https://isabellesbeadshop.onrender.com/"
       />
       <ProjectCard 
         title="Zen Garden"
-        description="Full-stack garden planner where users design and customize their own plot by placing trees, bushes, and flowers rendered in real-time with animated SVG graphics. Features user authentication, persistent plot data, and a REST API backend."
-        tech={["Handlebars", "SVG", "PostgreSQL", "Sequelize"]}
+        description="Server-backed application where users modify persistent garden state stored in PostgreSQL. 
+        The system translates structured data into SVG-based visual output."
+        tech={["Node.js", "PostgreSQL", "Sequelize", "SVG"]}
         github="https://github.com/swokamoto/zenGarden2"
         live="https://zengarden-5q63.onrender.com/"
+        designDoc="https://github.com/swokamoto/system-design-notes/blob/main/zen-garden.md"
       />
       <!-- <ProjectCard 
         title="PokeLounge"
@@ -94,34 +72,52 @@ import ProjectCard from '../components/ProjectCard.astro';
     </div>
   </section>
 
-  <section id="process" class="bg-bg-surface max-w-4xl mx-auto px-6 py-16">
+  <section id="process" class="max-w-4xl mx-auto px-6 py-16">
     <h2 class="text-2xl font-semibold text-text-primary mb-8 text-center">
       How I Build
     </h2>
     <div class="grid gap-6 md:grid-cols-2">
       <div class="bg-bg-card border border-border-subtle p-6 rounded-lg hover:border-accent-blue transition-all duration-200">
-        <h3 class="text-lg font-medium text-text-primary mb-2">Structure First</h3>
-        <p class="text-text-secondary text-sm leading-relaxed">I design the system and data model before writing implementation code.
-        In Relay RPG, this meant defining character state, turn flow, and progression rules
-        before building any Discord command handlers, which kept the backend logic predictable and consistent.</p>
+        <h3 class="text-lg font-medium text-text-primary mb-2">Model the system first</h3>
+        <p class="text-text-secondary text-sm leading-relaxed">I start by defining how data is structured and how it changes over time before writing code.
+        In Relay RPG, this meant designing character state and turn flow before implementing any commands.
+        </p>
       </div>
       <div class="bg-bg-card border border-border-subtle p-6 rounded-lg hover:border-accent-blue transition-all duration-200">
-        <h3 class="text-lg font-medium text-text-primary mb-2">State-Driven Systems</h3>
-        <p class="text-text-secondary text-sm leading-relaxed">I focus on how application state is created, updated, and persisted over time.
-        Zen Garden and Relay RPG both rely on server-backed state models where user actions
-        mutate structured data rather than isolated UI behavior.</p>
+        <h3 class="text-lg font-medium text-text-primary mb-2">State over UI</h3>
+        <p class="text-text-secondary text-sm leading-relaxed">I focus on how information is stored and updated rather than how it is displayed.
+        Applications become predictable when state is clearly defined and centrally managed.</p>
       </div>
       <div class="bg-bg-card border border-border-subtle p-6 rounded-lg hover:border-accent-blue transition-all duration-200">
-        <h3 class="text-lg font-medium text-text-primary mb-2">API Design</h3>
-        <p class="text-text-secondary text-sm leading-relaxed">I design APIs around domain behavior rather than UI structure.
-        Isabelle's Bead Shop separates customer-facing product flows from admin inventory management,
-        with Stripe payments and order state handled entirely on the server.</p>
+        <h3 class="text-lg font-medium text-text-primary mb-2">Clear domain APIs</h3>
+        <p class="text-text-secondary text-sm leading-relaxed">I design APIs around the behavior of the system, not the shape of the UI.
+        This keeps backend logic reusable and easier to evolve.</p>
       </div>
       <div class="bg-bg-card border border-border-subtle p-6 rounded-lg hover:border-accent-blue transition-all duration-200">
-        <h3 class="text-lg font-medium text-text-primary mb-2">Failure Handling</h3>
-        <p class="text-text-secondary text-sm leading-relaxed">I design systems to degrade gracefully when dependencies fail.
-        External API calls and user state changes are validated server-side,
-        ensuring the application remains stable even under partial failure conditions.</p>
+        <h3 class="text-lg font-medium text-text-primary mb-2">Design for failure</h3>
+        <p class="text-text-secondary text-sm leading-relaxed">I build systems that handle broken dependencies, invalid input, and edge cases gracefully
+        to ensure predictable behavior under real-world conditions.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="bg-bg-surface max-w-4xl mx-auto px-6 py-16">
+    <h2 class="text-2xl font-semibold text-text-primary mb-8 text-center">
+      About
+    </h2>
+    <div class="bg-bg-card border border-border-subtle rounded-2xl p-8 max-w-2xl mx-auto">
+      <div class="space-y-4 text-text-secondary leading-relaxed text-center">
+        <p>
+          I'm a full-stack developer focused on backend systems, persistent state, and predictable application behavior.
+        </p>
+
+        <p>
+          Before software, I spent 10 years as a Helicopter Crew Chief in the Air Force — where system reliability and structured troubleshooting weren't optional. I carry that same approach into how I design and build software.
+        </p>
+
+        <p>
+          My work spans multiplayer Discord bots, e-commerce platforms, and database-backed tools, all centered on server-managed state and consistent data flow.
+        </p>
       </div>
     </div>
   </section>
@@ -132,7 +128,7 @@ import ProjectCard from '../components/ProjectCard.astro';
     </h2>
     <div class="bg-bg-card border border-border-subtle rounded-2xl p-8 max-w-2xl mx-auto">
       <p class="text-text-secondary text-center mb-6">
-        Open to full-time and contract opportunities in full-stack development.
+        Open to full-time and contract opportunities in backend or full-stack development.
       </p>
       <div class="space-y-4">
         <div class="flex items-center justify-center gap-6">

@@ -5,9 +5,10 @@ export interface Props {
   tech: string[];
   github?: string;
   live?: string;
+  designDoc?: string;
 }
 
-const { title, description, tech, github, live } = Astro.props;
+const { title, description, tech, github, live, designDoc } = Astro.props;
 ---
 
 <div class="bg-bg-card border border-border-subtle rounded-2xl p-6 hover:border-accent-blue transition-all duration-200 h-full flex flex-col gap-4">
@@ -41,6 +42,13 @@ const { title, description, tech, github, live } = Astro.props;
       <div class="flex items-center justify-center gap-2 w-full sm:w-auto text-center px-4 py-2 text-text-muted border border-border-subtle rounded-lg opacity-50 cursor-not-allowed">
         💻 GitHub
       </div>
+    )}
+
+    {designDoc && (
+      <a href={designDoc} target="_blank" rel="noopener noreferrer"
+         class="flex items-center justify-center gap-2 w-full sm:w-auto text-center px-4 py-2 text-text-secondary hover:text-text-primary border border-border-subtle hover:border-accent-blue rounded-lg transition-all duration-200">
+        📄 System Design
+      </a>
     )}
   </div>
 
