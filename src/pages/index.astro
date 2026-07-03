@@ -38,6 +38,15 @@ import ProjectCard from '../components/ProjectCard.astro';
     </h2>
     <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-2">
       <ProjectCard 
+        title="Marches"
+        description="Campaign management platform for West Marches-style tabletop RPG campaigns. Tracks locations, NPCs, 
+        artifacts, expeditions, and session reports across a shared living world."
+        tech={["TypeScript", "Node.js", "PostgreSQL", "HTMX"]}
+        github="https://github.com/swokamoto/marches"
+        live="https://marches.fly.dev/"
+        designDoc="https://github.com/swokamoto/system-design-notes/blob/main/marches.md"
+      />
+      <ProjectCard 
         title="Relay RPG"
         description="Event-driven Discord RPG where game state, character data, and turn progression are 
         managed through server-side logic. Players interact through commands that update persistent SQLite-backed state."
@@ -62,13 +71,7 @@ import ProjectCard from '../components/ProjectCard.astro';
         live="https://zengarden-5q63.onrender.com/"
         designDoc="https://github.com/swokamoto/system-design-notes/blob/main/zen-garden.md"
       />
-      <!-- <ProjectCard 
-        title="PokeLounge"
-        description="Interactive ambient web app where users add up to 4 Pokémon to a cozy scene via the PokéAPI, drag-and-drop them between seats, and relax to a built-in lofi music player. Pokémon selections persist across sessions via localStorage, scenes are swappable, and each Pokémon generates a Chuck Norris joke with their name swapped in via a second API."
-        tech={["JQuery", "JavaScript", "HTML", "CSS"]}
-        github="https://github.com/swokamoto/group-11-project-pokemon"
-        live="https://group11projectpokemon.github.io/group-11-project-pokemon/"
-      /> -->
+      
     </div>
   </section>
 
@@ -79,24 +82,20 @@ import ProjectCard from '../components/ProjectCard.astro';
     <div class="grid gap-6 md:grid-cols-2">
       <div class="bg-bg-card border border-border-subtle p-6 rounded-lg hover:border-accent-blue transition-all duration-200">
         <h3 class="text-lg font-medium text-text-primary mb-2">Model the system first</h3>
-        <p class="text-text-secondary text-sm leading-relaxed">I start by defining how data is structured and how it changes over time before writing code.
-        In Relay RPG, this meant designing character state and turn flow before implementing any commands.
-        </p>
+        <p class="text-text-secondary text-sm leading-relaxed">I define data structures and state transitions before writing any code. Getting the model right makes everything downstream — routes, queries, APIs — obvious rather than improvised.</p>
       </div>
       <div class="bg-bg-card border border-border-subtle p-6 rounded-lg hover:border-accent-blue transition-all duration-200">
-        <h3 class="text-lg font-medium text-text-primary mb-2">State over UI</h3>
-        <p class="text-text-secondary text-sm leading-relaxed">I focus on how information is stored and updated rather than how it is displayed.
-        Applications become predictable when state is clearly defined and centrally managed.</p>
+        <h3 class="text-lg font-medium text-text-primary mb-2">Server owns the truth</h3>
+        <p class="text-text-secondary text-sm leading-relaxed">I keep the server as the system of record and let the interface reflect it. No client state to synchronize, no split source of truth.</p>
       </div>
       <div class="bg-bg-card border border-border-subtle p-6 rounded-lg hover:border-accent-blue transition-all duration-200">
-        <h3 class="text-lg font-medium text-text-primary mb-2">Clear domain APIs</h3>
+        <h3 class="text-lg font-medium text-text-primary mb-2">APIs that model behavior, not UI</h3>
         <p class="text-text-secondary text-sm leading-relaxed">I design APIs around the behavior of the system, not the shape of the UI.
         This keeps backend logic reusable and easier to evolve.</p>
       </div>
       <div class="bg-bg-card border border-border-subtle p-6 rounded-lg hover:border-accent-blue transition-all duration-200">
-        <h3 class="text-lg font-medium text-text-primary mb-2">Design for failure</h3>
-        <p class="text-text-secondary text-sm leading-relaxed">I build systems that handle broken dependencies, invalid input, and edge cases gracefully
-        to ensure predictable behavior under real-world conditions.</p>
+        <h3 class="text-lg font-medium text-text-primary mb-2">Validate before you commit</h3>
+        <p class="text-text-secondary text-sm leading-relaxed">I check preconditions before mutating state rather than cleaning up afterwards. Catching conflicts early is simpler and cheaper than unwinding them.</p>
       </div>
     </div>
   </section>
@@ -116,7 +115,7 @@ import ProjectCard from '../components/ProjectCard.astro';
         </p>
 
         <p>
-          My work spans multiplayer Discord bots, e-commerce platforms, and database-backed tools, all centered on server-managed state and consistent data flow.
+          My work spans campaign management platforms, multiplayer Discord bots, and e-commerce systems — all centered on server-managed state, role-based access, and consistent data flow.
         </p>
       </div>
     </div>
@@ -142,6 +141,10 @@ import ProjectCard from '../components/ProjectCard.astro';
         <div class="flex items-center justify-center gap-6">
           <span class="text-text-muted text-sm">GitHub</span>
           <a href="https://github.com/swokamoto" target="_blank" rel="noopener" class="text-accent-blue hover:text-blue-400 transition-all duration-200">github.com/swokamoto</a>
+        </div>
+        <div class="flex items-center justify-center gap-6">
+          <span class="text-text-muted text-sm">Resume</span>
+          <a href="/resume.pdf" download class="text-accent-blue hover:text-blue-400 transition-all duration-200">Download PDF</a>
         </div>
       </div>
     </div>
